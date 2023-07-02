@@ -31,7 +31,7 @@ const GameList=[
     },
     {
         id:7,
-        name:'Other Games',
+        name:'All',
         image:'./Images/Puzzle.png'
     },
 

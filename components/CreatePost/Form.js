@@ -145,7 +145,7 @@ function Form() {
         <input type="text" placeholder="Location" name="location" required onChange={handleChange} className="w-full mb-4 border-[1px] p-2 rounded-md" />
         <input type="text" placeholder="Zip" name="zip" required onChange={handleChange} className="w-full mb-4 border-[1px] p-2 rounded-md" />
         <select name="game" onChange={handleChange} required  className="w-full mb-4 border-[1px] p-2 rounded-md" >
-          <option disabled defaultValue> Select Game </option>
+          <option> Select Game </option>
           {/* iterates the gamelist json format data and shoes their name */}
           {Data.GameList.map((item) => (
             <option key={item.id}>{item.name}</option>

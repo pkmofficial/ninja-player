@@ -51,11 +51,21 @@ export default function Home() {
 
   const onGamePress=async(gameName)=>{
     setPosts([]);
-    if(gameName=='Other Games') {
+    if(gameName=='All') {
       getPost();
       return ;
     }
     const q=query(collection(db,"posts"), where("game","==",gameName));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+      let data=doc.data();
+      data.id=doc.id
+      setPosts(posts=>[...posts,doc.data()]);
+    });
+  }
+  const onSearchButtonClick = async(zipCode)=>{
+    setPosts([]);
+    const q=query(collection(db,"posts"), where("zip","==",zipCode));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
       let data=doc.data();
@@ -70,8 +80,8 @@ export default function Home() {
       
       <div className='w-[70%] md:w-[50%] lg:w-[55%]'>
           <Hero/>
-          <Search/>
-          <GameList onGamePress={onGamePress}/>
+          <Search onSearchButtonClick={onSearchButtonClick}/>
+          <GameList onGamePress={onGamePress} />
       </div>
       
       {/* 5. checks if the posts variable has a value. If it does, it renders the Posts COMPONENT with the posts prop containing the value of posts. Otherwise, it renders nothing (null). This allows for conditional rendering of the Posts component based on the presence or absence of data in the posts variable. */}

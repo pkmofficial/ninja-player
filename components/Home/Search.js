@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
-function Search() {
+function Search({onSearchButtonClick}) {
     const [searchText,setSearchText]=useState();
-    const onSearchButtonClick=()=>{
-        // this func not req
-        console.log("Search Text:",searchText)
-    }
+    // const onSearchButtonClick=()=>{
+    //     // this func not req
+    //     // console.log("Search Text:",searchText)
+    //     onZipSearch(searchText)
+    // }
     return (
     <div className='mt-7'>
         <label  className="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
@@ -16,7 +17,7 @@ function Search() {
                 </svg>
             </div>
             <input type="search"  onChange={(text)=>setSearchText(text.target.value)} id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "   placeholder="Search with ZipCode" required />
-            <button type="submit" onClick={()=>onSearchButtonClick()}  className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 " >Search</button>
+            <button type="submit" onClick={()=>onSearchButtonClick(searchText)}  className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 " >Search</button>
         </div>
     </div>
   )
