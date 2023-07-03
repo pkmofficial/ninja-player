@@ -89,7 +89,7 @@ function Form() {
     toast.warn('Post Created Successfully.', {
       position: "top-center", autoClose: 5000, hideProgressBar: true, closeOnClick: true, pauseOnHover: true, draggable: false, progress: undefined, theme: "dark",
     });
-    alert("Post Created Successfully.")
+    // alert("Post Created Successfully.")
     // setShowToast(true); // triggers the display of a toast notification to indicate that the form has been submitted successfully
     
     // 5.2
