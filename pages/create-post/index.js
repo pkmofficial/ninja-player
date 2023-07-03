@@ -36,18 +36,22 @@ import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 // import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
+
+import Form from '../../components/CreatePost/Form';
+
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Form from '../../components/CreatePost/Form';
 
 function CreatePost() {
   const { data: session } = useSession();
   const router = useRouter();
   const showToastMessage = () => {
+    toast.success('Please sign in to create a post.', {
+      position: "top-center", autoClose: 5000, hideProgressBar: true, closeOnClick: true, pauseOnHover: true, draggable: false, progress: undefined, theme: "dark",
+    });
     // toast.warn('Please sign in to create a post.', {
     //   position: "top-center", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: false, progress: undefined, theme: "light",
     // });
-        alert("Please sign in to create a post.")
   }
   useEffect(() => {
     if (!session) {
@@ -55,6 +59,7 @@ function CreatePost() {
       //   position: "top-center", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: false, progress: undefined, theme: "light",
       // });
       showToastMessage()
+      // alert("Please sign in to create a post.")
       // toast("");
       router.push('/'); // home page
     }
