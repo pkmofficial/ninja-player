@@ -86,9 +86,9 @@ function Form() {
     // 3.1 : prevents the default form submission behavior, which would cause a page refresh. This allows you to handle the form submission manually without navigating away from the current page.
     e.preventDefault(); 
     // console.log(inputs)
-    // toast.warn('Post Created Successfully.', {
-    //   position: "top-center", autoClose: 5000, hideProgressBar: true, closeOnClick: true, pauseOnHover: true, draggable: false, progress: undefined, theme: "dark",
-    // });
+    toast.warn('Post Created Successfully.', {
+      position: "top-center", autoClose: 5000, hideProgressBar: true, closeOnClick: true, pauseOnHover: true, draggable: false, progress: undefined, theme: "dark",
+    });
     alert("Post Created Successfully.")
     // setShowToast(true); // triggers the display of a toast notification to indicate that the form has been submitted successfully
     
