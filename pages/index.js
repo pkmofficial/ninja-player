@@ -5,6 +5,7 @@ import Hero from '../components/Home/Hero'
 import Search from '../components/Home/Search'
 
 import GameList from '../components/Home/GameList'
+import { ToastContainer } from 'react-toastify';
 
 // app module created in the firebase-config file is imported
 import app from '../shared/FirebaseConfig'
@@ -77,7 +78,7 @@ export default function Home() {
   return (
     <div className='flex flex-col items-center 
     justify-center mt-9'>
-      
+      <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable={false} pauseOnHover theme="light"/>
       <div className='w-[70%] md:w-[50%] lg:w-[55%]'>
           <Hero/>
           <Search onSearchButtonClick={onSearchButtonClick}/>
