@@ -7,17 +7,8 @@ import { ToastContainer } from 'react-toastify';
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <div>
+        <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable={false} pauseOnHover theme="light"/>
         <SessionProvider session={session}>
-          <ToastContainer position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable={false}
-pauseOnHover
-theme="light"/>
           <Header/>
           {/* main content of web page which is in index.js*/}
           <Component {...pageProps} />
